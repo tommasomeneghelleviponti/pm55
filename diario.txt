@@ -1,0 +1,6 @@
+DIARIO PROGETTO DATABASE PER POTER MONITORARE LE CENTRALI IDROELETTRICHE
+Jordi - Meneghel - Ortes
+
+22/03/22 : inizio (logistica)
+	Prepariamo un progetto github per lavorare sia a scuola che casa (senza passaggi di chiavette e potendo 
+recuperare i file cancellati). Iniziamo a decidere come modellare sia la parte backend che di frontend. hr
