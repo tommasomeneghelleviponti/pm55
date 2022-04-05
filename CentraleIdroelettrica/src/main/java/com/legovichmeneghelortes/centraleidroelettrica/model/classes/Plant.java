@@ -7,24 +7,28 @@ package com.legovichmeneghelortes.centraleidroelettrica.model.classes;
 import java.util.LinkedList;
 
 /**
- * @author ortes.riccardo
- * Classe che rappresenta l'oggetto della centrale idroelettrica
+ * @author ortes.riccardo Classe che rappresenta l'oggetto della centrale
+ * idroelettrica
  */
 public class Plant {
-    private String identifies; 
+
+    private String identifies;
     private String address;
     private String province;
     private double nominal_power; //MW
     private boolean flag;
     private LinkedList<Record> production;
-    
+
     /**
      * Metodo per costruire l'oggetto centrale
-     * @param identifies un codice alfanumerico di 4 cifre che la identifica in maniera univoca
-     * @param address  ubicazione della centrale
+     *
+     * @param identifies un codice alfanumerico di 4 cifre che la identifica in
+     * maniera univoca
+     * @param address ubicazione della centrale
      * @param province provincia italiana in cui si trova la centrale
      * @param nominal_power potenza nominale in megawatt
-     * @param flag un flag che indica se la centrale e' attiva oppure in manutenzione
+     * @param flag un flag che indica se la centrale e' attiva oppure in
+     * manutenzione
      */
     public Plant(String identifies, String address, String province, double nominal_power, boolean flag) {
         this.identifies = identifies;
@@ -82,6 +86,5 @@ public class Plant {
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
-    
-    
+
 }
