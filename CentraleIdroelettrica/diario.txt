@@ -8,5 +8,9 @@ recuperare i file cancellati). Iniziamo a decidere come modellare sia la parte b
 29/03/22 : prime decisioni 
 	Capiamo come utilizzare NetBeans Team, e creiamo la classe centrale e decidiamo la grafica.  
 
-05/04/22 : Coding
+05/04/22 : coding
         Ci dividiamo il lavoro. Iniziamo a scrivere il codice
+
+26/04/2022 : punto di svolta
+        Abbiamo fatto un grande passo in avanti sul modele per quanto riguarda la grafica mentre per il 
+control siamo riusciti a scaricare e utilizzare yaml per io dei file
