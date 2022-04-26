@@ -13,14 +13,14 @@ import java.io.InputStream;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.Map;
+import org.yaml.snakeyaml.Yaml;
 
 /**
  * @author ortes.riccardo Classe che rappresenta l'oggetto della centrale
  * idroelettrica
  */
-public class Plant {
+public class Plant extends SimplePlant {
 
-    private String identifies;
     private String address;
     private String province;
     private double nominal_power; //MW
@@ -48,24 +48,7 @@ public class Plant {
 
     public void loadRecords() {
         production = new LinkedList<Record>();
-        try ( BufferedReader bfr = new BufferedReader(new FileReader("data/records/" + identifies + "storic.txt"))) {
-            String currentLine, year, month;
-            while ((currentLine = bfr.readLine()) != null) {
-                String[] sections = currentLine.split("-");
-                year = sections[0];
-                month = sections[1];
-                double mw = Double.parseDouble(bfr.readLine());
 
-                Record r = new Record(identifies, month, year, mw);
-                production.add(r);
-                bfr.readLine();
-            }
-
-        } catch (FileNotFoundException ex) {
-            System.out.println("fnfex");
-        } catch (IOException ex) {
-            System.out.println("ioex");
-        }
     }
 
     public LinkedList<Record> getProduction() {
