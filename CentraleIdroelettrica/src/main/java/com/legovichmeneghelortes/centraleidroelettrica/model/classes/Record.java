@@ -11,8 +11,8 @@ package com.legovichmeneghelortes.centraleidroelettrica.model.classes;
 public class Record {
 
     private String code;
-    private String month;
-    private String year;
+    private int month;
+    private int year;
     private double megawatt_hour; //MW
     
     /**
@@ -21,12 +21,21 @@ public class Record {
     * @param year anno di rifermento
     * @param megawatt_hour Megawattora prodotti nel mese di riferimento.
     */
-    public Record(String code, String month, String year, double megawatt_hour) {
+    public Record(String code, int month, int year, double megawatt_hour) {
         this.code = code;
         this.month = month;
         this.year = year;
         this.megawatt_hour = megawatt_hour;
     }
+
+    public Record ( Record other ) {
+        this.code = other.code;
+        this.month = other.month;
+        this.year = other.year;
+        this.megawatt_hour = other.megawatt_hour;
+    }
+
+    public static LinkedList <Record>
 
     public String getCode() {
         return code;
@@ -36,19 +45,19 @@ public class Record {
         this.code = code;
     }
 
-    public String getMonth() {
+    public int getMonth() {
         return month;
     }
 
-    public void setMonth(String month) {
+    public void setMonth(int month) {
         this.month = month;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -58,5 +67,9 @@ public class Record {
 
     public void setMegawatt_hour(double megawatt_hour) {
         this.megawatt_hour = megawatt_hour;
+    }
+
+    public boolean belongsTo ( Plant plant ) {
+        return this.code.equals(plant.getIdentifies());
     }
 }
