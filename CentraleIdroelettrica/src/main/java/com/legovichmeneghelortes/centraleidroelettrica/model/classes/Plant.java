@@ -5,12 +5,14 @@
 package com.legovichmeneghelortes.centraleidroelettrica.model.classes;
 
 
+import com.legovichmeneghelortes.centraleidroelettrica.exceptions.DuplicateRecordException;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.format.DateTimeFormatter;
+import java.util.DuplicateFormatFlagsException;
 import java.util.LinkedList;
 import java.util.Map;
 import org.yaml.snakeyaml.Yaml;
@@ -52,23 +54,24 @@ public class Plant {
 
     public LinkedList<Record> getProduction() {
 
-        LinkedList < Record > production = new LinkedList < Record > ();
+        RWHandler io = RWHandler.getInstance ();
 
-        // 
+        LinkedList < Record > production = io.getRecords ();
+        LinkedList < Record > current = new LinkedList <> ();
 
-        return production;
+        production.stream ().filter ( r -> ( r.belongsTo ( this ) ) ).forEachOrdered ( r -> {
+            current.add ( r );
+        } );
+
+        return current;
     }
 
-    public void addRecord (Record r) {
-        // chiama 
-    }
+    public void addRecord (Record r) throws DuplicateRecordException {
 
-    public boolean reserchRecord(Record r) {
-        
-    }
+        RWHandler io = RWHandler.getInstance ();
 
-    public void setProduction(LinkedList<Record> production) {
-        this.production = production;
+        io.writeRecord ( r );
+
     }
 
     public String getIdentifies() {
