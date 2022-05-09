@@ -4,6 +4,7 @@
  */
 package com.legovichmeneghelortes.centraleidroelettrica;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -17,6 +18,9 @@ import javafx.scene.control.Label;
  */
 public class CentraleController implements Initializable{
 
+    boolean loaded;
+    
+    private static String code; //nome della centrale
     
     @FXML
     private Label active;
@@ -34,13 +38,26 @@ public class CentraleController implements Initializable{
     private Label province;
 
     @FXML
-    void delete(ActionEvent event) {
-
+    void delete(ActionEvent event) throws IOException {
+        // cancello la centrale caricata e i record e torno alla home
+        App.setRoot("index");
+    }
+    
+    @FXML
+    public void caricaCentrale(String code){
+        //creo una centrale in base al nome (code) dato
+        CentraleController.code = code;
+        System.out.println(code);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        //set text con gli attributi della centrale
+        identifier.setText(code); //questo era una prova, code è il nome della centrale
     }
     
+    @FXML
+    void newRecord(ActionEvent event) throws IOException {
+        App.setRoot("addRecord");
+    }
 }

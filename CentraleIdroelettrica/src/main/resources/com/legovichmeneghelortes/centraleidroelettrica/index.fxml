@@ -76,7 +76,11 @@
             </VBox>
             <VBox prefHeight="620.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="list" prefHeight="620.0" prefWidth="200.0" />
+                  <HBox prefHeight="620.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="list" prefHeight="620.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

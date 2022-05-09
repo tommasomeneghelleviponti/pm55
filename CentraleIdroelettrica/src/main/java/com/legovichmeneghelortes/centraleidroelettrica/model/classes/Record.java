@@ -35,7 +35,7 @@ public class Record {
         this.megawatt_hour = other.megawatt_hour;
     }
 
-    public static LinkedList <Record>
+//    public static LinkedList <Record>
 
     public String getCode() {
         return code;

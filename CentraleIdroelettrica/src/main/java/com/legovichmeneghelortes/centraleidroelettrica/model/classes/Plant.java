@@ -63,13 +63,13 @@ public class Plant {
         // chiama 
     }
 
-    public boolean reserchRecord(Record r) {
-        
-    }
-
-    public void setProduction(LinkedList<Record> production) {
-        this.production = production;
-    }
+//    public boolean reserchRecord(Record r) {
+//        
+//    }
+//
+//    public void setProduction(LinkedList<Record> production) {
+//        this.production = production;
+//    }
 
     public String getIdentifies() {
         return identifies;

@@ -39,13 +39,8 @@ public class AddController implements Initializable{
     }
 
     @FXML
-    void saveData(ActionEvent event) throws IOException {
+    void saveData(ActionEvent event) throws IOException { //creo la centrale inserendo tutti i dati presi dalle textview
         String name = identifier.getText();
-        //newPlant.setIdentifies(name);
-        //newPlant.setIdentifies(name);
-        //newPlant.setIdentifies(name);
-        //newPlant.setIdentifies(name);
-        //newPlant.setIdentifies(name);
         boolean isActive = flag.isSelected();
         closeWindow(new ActionEvent());
     }

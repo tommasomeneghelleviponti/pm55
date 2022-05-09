@@ -33,6 +33,9 @@
               <yAxis>
                 <NumberAxis side="LEFT" />
               </yAxis>
+               <padding>
+                  <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+               </padding>
             </LineChart>
             <VBox prefHeight="620.0" prefWidth="280.0">
                <children>
@@ -111,10 +114,21 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="120.0" prefWidth="280.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#delete" text="Button">
+                        <Button fx:id="addRecord" mnemonicParsing="false" onAction="#newRecord" text="Add Record">
                            <font>
                               <Font name="Times New Roman" size="12.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="delete" mnemonicParsing="false" onAction="#delete" text="Delete Central">
+                           <font>
+                              <Font name="Times New Roman" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
