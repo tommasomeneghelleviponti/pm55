@@ -28,8 +28,8 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="323.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="100.0" text="Mounth" />
-                  <TextField fx:id="mounth" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="100.0" text="Month" />
+                  <TextField fx:id="month" />
                </children>
             </HBox>
          </children>

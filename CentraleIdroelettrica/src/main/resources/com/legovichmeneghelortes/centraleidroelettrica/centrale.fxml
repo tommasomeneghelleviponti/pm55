@@ -14,7 +14,7 @@
    <children>
       <HBox prefHeight="100.0" prefWidth="1280.0">
          <children>
-            <Label prefHeight="100.0" prefWidth="1280.0" text="HOME">
+            <Label fx:id="home" onMouseClicked="#goHome" prefHeight="100.0" prefWidth="150.0" text="HOME">
                <padding>
                   <Insets left="40.0" />
                </padding>

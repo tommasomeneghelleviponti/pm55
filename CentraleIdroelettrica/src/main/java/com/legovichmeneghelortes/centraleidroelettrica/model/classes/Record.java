@@ -4,6 +4,8 @@
  */
 package com.legovichmeneghelortes.centraleidroelettrica.model.classes;
 
+import java.util.LinkedList;
+
 /**
  * @author ortes.riccardo Classe che rappresenta i record della centrale
  * idroelettrica
@@ -35,7 +37,10 @@ public class Record {
         this.megawatt_hour = other.megawatt_hour;
     }
 
-//    public static LinkedList <Record>
+//    public static LinkedList <Record> getProduction ( String id ) {
+//        RWHandler io = RWHandler.getInstance();
+//        io.get
+//    }
 
     public String getCode() {
         return code;
@@ -71,5 +76,14 @@ public class Record {
 
     public boolean belongsTo ( Plant plant ) {
         return this.code.equals(plant.getIdentifies());
+    }
+
+    public boolean equals ( Record r ) {
+        boolean condition = false;
+
+        condition = code.equals ( r.code ) && month == r.month && year == r.year 
+                && megawatt_hour == r.megawatt_hour;
+
+        return condition;
     }
 }

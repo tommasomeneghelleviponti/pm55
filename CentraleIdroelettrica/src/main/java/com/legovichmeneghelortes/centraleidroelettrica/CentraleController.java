@@ -4,13 +4,17 @@
  */
 package com.legovichmeneghelortes.centraleidroelettrica;
 
+import com.legovichmeneghelortes.centraleidroelettrica.model.classes.Plant;
+import com.legovichmeneghelortes.centraleidroelettrica.model.classes.RWHandler;
 import java.io.IOException;
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -21,6 +25,9 @@ public class CentraleController implements Initializable{
     boolean loaded;
     
     private static String code; //nome della centrale
+    
+    @FXML
+    private Label home;
     
     @FXML
     private Label active;
@@ -39,13 +46,12 @@ public class CentraleController implements Initializable{
 
     @FXML
     void delete(ActionEvent event) throws IOException {
-        // cancello la centrale caricata e i record e torno alla home
+        RWHandler.getInstance().deletePlant(code);
         App.setRoot("index");
     }
     
     @FXML
     public void caricaCentrale(String code){
-        //creo una centrale in base al nome (code) dato
         CentraleController.code = code;
         System.out.println(code);
     }
@@ -53,11 +59,34 @@ public class CentraleController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //set text con gli attributi della centrale
-        identifier.setText(code); //questo era una prova, code è il nome della centrale
+        LinkedList <Plant> allPlants = RWHandler.getInstance().getPlants();
+        Plant rightOne = new Plant();
+        for(Plant s : allPlants){
+            if(s.getIdentifies().equals(code)){
+                rightOne = s;
+            }
+        }
+        identifier.setText(rightOne.getIdentifies());
+        address.setText(rightOne.getAddress());
+        province.setText(rightOne.getProvince());
+        nPower.setText(String.valueOf(rightOne.getNominal_power()));
+        active.setText(rightOne.isFlag() ? "yes" : "no");
+        
     }
     
     @FXML
     void newRecord(ActionEvent event) throws IOException {
+        AddRecordController ad = new AddRecordController();
+        ad.setCode(code);
         App.setRoot("addRecord");
+    }
+    
+    @FXML
+    void goHome(MouseEvent event) throws IOException {
+        App.setRoot("index");
+    }
+    
+    public static String getCode(){
+        return code;
     }
 }

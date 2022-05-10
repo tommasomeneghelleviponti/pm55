@@ -12,11 +12,13 @@ import javafx.scene.control.TextField;
 
 public class AddRecordController {
 
+    private static String code;
+    
     @FXML
     private Button cancel;
 
     @FXML
-    private TextField mounth;
+    private TextField month;
 
     @FXML
     private TextField power;
@@ -35,7 +37,12 @@ public class AddRecordController {
     
     @FXML
     void saveData(ActionEvent event) throws IOException {
-        //new record and return to central screen
-        App.setRoot("centrale");
+//        String c = AddRecordController.code;
+//        Record rec = new Record(c, month.getText(), year.getText(), Double.parseDouble(power.getText()));
+//        App.setRoot("centrale");
+    }
+    
+    public void setCode(String c){
+        AddRecordController.code = c;
     }
 }

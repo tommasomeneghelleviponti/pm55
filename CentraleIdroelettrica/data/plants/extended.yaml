@@ -1,1 +1,4 @@
-
+!!com.legovichmeneghelortes.centraleidroelettrica.model.classes.Plant {address: via,
+  flag: true, identifies: ttgg, nominal_power: 666.0, province: ve}
+--- !!com.legovichmeneghelortes.centraleidroelettrica.model.classes.Plant {address: via,
+  flag: true, identifies: ffgg, nominal_power: 555.0, province: ciao}

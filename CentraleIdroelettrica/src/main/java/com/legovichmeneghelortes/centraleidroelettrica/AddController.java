@@ -1,5 +1,7 @@
 package com.legovichmeneghelortes.centraleidroelettrica;
 
+import com.legovichmeneghelortes.centraleidroelettrica.model.classes.Plant;
+import com.legovichmeneghelortes.centraleidroelettrica.model.classes.RWHandler;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,7 +44,12 @@ public class AddController implements Initializable{
     void saveData(ActionEvent event) throws IOException { //creo la centrale inserendo tutti i dati presi dalle textview
         String name = identifier.getText();
         boolean isActive = flag.isSelected();
-        closeWindow(new ActionEvent());
+        double nomPower = Double.parseDouble(nPower.getText());
+        String prov = province.getText();
+        String addr = address.getText();
+        Plant nP = new Plant(name, addr, prov, nomPower, isActive);
+        RWHandler.getInstance().writePlant(nP);
+        App.setRoot("index");
     }
 
     @Override

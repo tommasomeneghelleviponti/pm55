@@ -5,4 +5,5 @@ module com.legovichmeneghelortes.centraleidroelettrica {
 
     opens com.legovichmeneghelortes.centraleidroelettrica to javafx.fxml;
     exports com.legovichmeneghelortes.centraleidroelettrica;
+    exports com.legovichmeneghelortes.centraleidroelettrica.model.classes to org.yaml.snakeyaml;
 }
